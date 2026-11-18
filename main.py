@@ -25,6 +25,32 @@ def add_task():
     print("Task added successfully!")
 
 
+def complete_task():
+    if not tasks:
+        print("No tasks available to complete.")
+        return
+
+    display_tasks()
+
+    try:
+        task_id = int(input("Enter task ID to complete: "))
+    except ValueError:
+        print("Invalid ID. Please enter a number.")
+        return
+
+    for task in tasks:
+        if task["id"] == task_id:
+            if task["completed"]:
+                print("Task is already completed.")
+            else:
+                task["completed"] = True
+                print("Task marked as completed!")
+            return
+
+    print("Task ID not found.")
+
+
+
 def main():
     while True:
         print("\n===== Student Task Manager =====")
