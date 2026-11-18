@@ -57,6 +57,7 @@ def main():
         print("1. Add Task")
         print("2. Display Tasks")
         print("3. Exit")
+        print("4. Complete Task")
 
         choice = input("Enter your choice: ")
 
@@ -67,6 +68,8 @@ def main():
         elif choice == "3":
             print("Goodbye!")
             break
+        elif choice == "4":
+            complete_task()
         else:
             print("Invalid choice. Try again.")
 
